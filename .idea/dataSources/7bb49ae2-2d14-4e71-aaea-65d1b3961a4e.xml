@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - admin_laravel@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="admin_laravel">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="avto24"/>
+    <schema id="3" name="barbaris"/>
+    <schema id="4" name="benchee"/>
+    <schema id="5" name="bona"/>
+    <schema id="6" name="dworniki"/>
+    <schema id="7" name="dworniki_tehdoc"/>
+    <schema id="8" name="housing"/>
+    <schema id="9" name="information_schema"/>
+    <schema id="10" name="kids"/>
+    <schema id="11" name="kids_work"/>
+    <schema id="12" name="kranik"/>
+    <schema id="13" name="kranik_work"/>
+    <schema id="14" name="laravel"/>
+    <schema id="15" name="leleka"/>
+    <schema id="16" name="luxauto"/>
+    <schema id="17" name="madespain"/>
+    <schema id="18" name="mehanka"/>
+    <schema id="19" name="mirsna"/>
+    <schema id="20" name="mysql"/>
+    <schema id="21" name="netorder_sint"/>
+    <schema id="22" name="nikitatoys"/>
+    <schema id="23" name="nova_poshta"/>
+    <schema id="24" name="opel"/>
+    <schema id="25" name="opencart"/>
+    <schema id="26" name="parse_erc"/>
+    <schema id="27" name="performance_schema"/>
+    <schema id="28" name="remni"/>
+    <schema id="29" name="remni_work"/>
+    <schema id="30" name="rukovoditel_server"/>
+    <schema id="31" name="selina"/>
+    <schema id="32" name="selina-work"/>
+    <schema id="33" name="sint_odessa"/>
+    <schema id="34" name="topfood"/>
+    <schema id="35" name="wejournal"/>
+  </database-model>
+</dataSource>
