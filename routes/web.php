@@ -17,3 +17,25 @@ Route::get('/', function () {
 
 Route::get('/about', ['as'=>'about']);
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+/* Admin*/
+
+Route::group(['middleware' => ['status', 'auth']], function(){
+
+    $groupData = [
+        'namespace' => 'Admin',
+        'prefix' => 'admin',
+    ];
+
+    Route::group($groupData, function (){
+        //Route::resource('index', 'MainController')->name('admin.index');
+        Route::resource('index', 'MainController');
+    });
+});
+
+
+Route::get('/user/logout', ['as' => 'user.logout', 'uses' => 'Auth\LoginController@logout']);
