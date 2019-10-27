@@ -12,6 +12,7 @@
         <!-- Styles -->
         <style>
             html, body {
+               // background-image: url("/images/bg.jpg");
                 background-color: #fff;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
@@ -67,6 +68,25 @@
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
+
+
+                    @if(Auth::check() && Auth::user()->isDisabled())
+                        <a href="{{ url('/') }}">Home</a>
+
+                    @elseif(Auth::check() && Auth::user()->isUser())
+                        <a href="{{ url('/') }}">Home</a>
+
+                        <a href="{{ url('/') }}">Cabinet</a>
+                        <a class="nav-link" href="{{ route('user.logout') }}">exit</a>
+
+                    @elseif(Auth::check() && Auth::user()->isAdministrator())
+                        <a href="{{ url('/') }}">Home</a>
+                        <a href="{{ url('/') }}">Admin</a>
+                        <a class="nav-link" href="{{ route('user.logout') }}">exit</a>
+                    @else
+                        <a href="{{ url('/') }}">Home</a>
+                    @endif
+                     |
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
@@ -79,22 +99,7 @@
                 </div>
             @endif
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
         </div>
     </body>
 </html>
