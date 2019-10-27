@@ -33,9 +33,15 @@ Route::group(['middleware' => ['status', 'auth']], function(){
 
     Route::group($groupData, function (){
         //Route::resource('index', 'MainController')->name('admin.index');
-        Route::resource('index', 'MainController');
+        Route::resource('index', 'MainController')->names('blog.admin.index');
+
+
     });
 });
+
+//Route::resource('users', 'UserController')->names('admin.users');
+
+Route::get('user/index', 'User\MainController@index');
 
 
 Route::get('/user/logout', ['as' => 'user.logout', 'uses' => 'Auth\LoginController@logout']);
